@@ -7,4 +7,4 @@ with /sg commands
 ## Deploy - Simplest Way
 ##### Deploy - with /sg command
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MR-JINN-OF-TG/song-bot/tree/main)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/LucidoXD/song-bot)
