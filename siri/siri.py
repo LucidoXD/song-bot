@@ -10,11 +10,11 @@ from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 ABS="GROUP"
-APPER="MASTER🔍"
-OWNER="MR_JINN_OF_TG"
-GITCLONE="https://t.me/MR_JINN_OF_TG"
-B2="https://t.me/NAZRIYAMUSICS"
-BUTTON1="🔍UPDATES🔎"
+APPER="Master"
+OWNER="LucidoXD"
+GITCLONE="https://t.me/LucidoXD"
+B2="https://t.me/tubots"
+BUTTON1="Updates"
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -26,7 +26,7 @@ async def start(client, message):
          reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(BUTTON1, url=GITCLONE)
+                    InlineKeyboardButton(BUTTON1, url=B2)
                  ]
           ]
         ),
@@ -34,13 +34,13 @@ async def start(client, message):
     )
 
 
-@Client.on_message(filters.command(['sg']))
+@Client.on_message(filters.command(['song']))
 def a(client, message):
     query = ''
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('`Fetching....from..my..database... Please Wait...`')
+    m = message.reply('`Fetching...from..my..database... Please Wait...`')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -64,7 +64,7 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[NAZRIYA/🇮🇳]" 
+            performer = f"[Bliss]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
@@ -75,17 +75,17 @@ def a(client, message):
             return
     except Exception as e:
         m.edit(
-            "**Enter Song Name with /sg Command!**"
+            "**Enter Song Name with /song Command!**"
         )
         print(str(e))
         return
-    m.edit("`... Uploading... PLEASE.....BE..PATIENT...`")
+    m.edit("`Uploading...`")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/NAZRIYASONGBOT">🎧NAZRIYA🎧</a>'
+        rep = f'<b>Title:</b> <a href="{link}">{title}</a>\n<b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By: @MissBlissRobot</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
