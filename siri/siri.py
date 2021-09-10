@@ -11,10 +11,10 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 ABS="GROUP"
 APPER="Master"
-OWNER="LucidoXD"
+OWNER="Luciddo"
 GITCLONE="https://t.me/LucidoXD"
-B2="https://t.me/tubots"
-BUTTON1="Updates"
+B2="https://t.me/luciddo"
+BUTTON1="Donate"
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -40,7 +40,7 @@ def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('`Fetching...from..my..database... Please Wait...`')
+    m = message.reply('`Searching on youtube`')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -71,7 +71,7 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**NO DATA FOUNDED WITH THIS TRY WITH ANOTHER !**')
+            m.edit('**Nothing found**')
             return
     except Exception as e:
         m.edit(
@@ -93,7 +93,7 @@ def a(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('**AN ERROR OCCURED!!**')
+        m.edit('Error')
         print(e)
     try:
         os.remove(audio_file)
