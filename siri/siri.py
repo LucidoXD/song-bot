@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 ABS="GROUP"
 APPER="Master"
-OWNER="Luciddo"
+OWNER="Abarnkid"
 GITCLONE="https://t.me/LucidoXD"
 B2="https://t.me/luciddo"
 BUTTON1="Donate"
@@ -64,7 +64,7 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[Bliss]" 
+            performer = f"[Youtube music]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
@@ -79,7 +79,7 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("`Uploading...`")
+    m.edit("Uploading...")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
