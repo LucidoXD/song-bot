@@ -13,7 +13,7 @@ ABS="GROUP"
 APPER="Master"
 OWNER="Abarnkid"
 GITCLONE="https://t.me/LucidoXD"
-B2="https://t.me/luciddo"
+B2="https://t.me/Avicii"
 BUTTON1="Donate"
 
 def time_to_seconds(time):
@@ -40,7 +40,7 @@ def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('`Searching on youtube`')
+    m = message.reply('Searching on youtube')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
