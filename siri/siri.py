@@ -22,6 +22,7 @@ def time_to_seconds(time):
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
+    await message.reply_photo(photo=Config.START_IMG, caption=Config.START_MSG.format(message.from_user.mention),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -70,11 +71,11 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**Nothing found**')
+            m.edit('Nothing found')
             return
     except Exception as e:
         m.edit(
-            "**Enter Song Name with /song Command!**"
+            "Enter Song Name with /song Command!"
         )
         print(str(e))
         return
@@ -99,3 +100,4 @@ def a(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+ 
