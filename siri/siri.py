@@ -12,7 +12,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 ABS="GROUP"
 APPER="Master"
 OWNER="Abarnkid"
-GITCLONE="https://t.me/LucidoXD"
+GITCLONE="https://t.me/Luciddo"
 B2="https://t.me/Avicii"
 BUTTON1="Donate"
 
@@ -22,7 +22,6 @@ def time_to_seconds(time):
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
-    await message.reply_photo(photo=Config.START_IMG, caption=Config.START_MSG.format(message.from_user.mention),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
